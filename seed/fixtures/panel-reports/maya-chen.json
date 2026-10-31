@@ -1,0 +1,74 @@
+{
+  "candidateId": "aaaaaaaa-aaaa-4aaa-8aaa-aaaaaaaaaaa1",
+  "panelScore": 94,
+  "recommendation": "advance",
+  "summary": "Maya Chen's repository matches the resume. Pulseboard has a long commit history, a passing build, and tests around the websocket path the role needs.",
+  "consensus": [
+    "The websocket fanout, the ingest pipeline, and the socket tests are in the repository.",
+    "The dates on the resume line up with a multi-year commit history."
+  ],
+  "disagreements": [],
+  "questionsForHR": [
+    "Ask which part of the ingest pipeline she would redesign on a higher volume.",
+    "Ask how the on-call rotation used the board during an incident.",
+    "Ask what she left untested on purpose.",
+    "Ask how she would split ownership of the client and the pipeline on this team.",
+    "Ask for the production incident she is least proud of and what changed afterward."
+  ],
+  "reviews": [
+    {
+      "persona": "project_manager",
+      "verdict": "advance",
+      "score": 95,
+      "headline": "The scope she claims is the scope the commit history supports.",
+      "strengths": [
+        { "text": "She owned the board from ingest through the UI across several years.", "evidence": "Resume: Pulseboard (Feb 2023 – Oct 2026). First commit 2023-02-11, last commit 2026-10-18, 146 active days." }
+      ],
+      "drawbacks": [
+        { "text": "The resume does not say what she explicitly left out of scope.", "evidence": "The project description lists the protocol, the pipeline, and the React UI, and stops there." }
+      ],
+      "redFlags": []
+    },
+    {
+      "persona": "staff_engineer",
+      "verdict": "advance",
+      "score": 96,
+      "headline": "The architecture in the resume is the architecture in the source, and the build passes.",
+      "strengths": [
+        { "text": "Socket fanout, retries, and end-to-end protocol tests are all present.", "evidence": "src/server/hub.ts, src/pipeline/ingest.ts, and tests/socket.e2e.ts. Build log: tsc and vite build succeeded. 42 tests passed." }
+      ],
+      "drawbacks": [
+        { "text": "A single largest commit still holds 11% of the lines, which is healthy but worth a glance.", "evidence": "largestCommitShare is 0.11 across 428 commits." }
+      ],
+      "redFlags": []
+    },
+    {
+      "persona": "associate_engineer",
+      "verdict": "advance",
+      "score": 92,
+      "headline": "I would hand her a pipeline ticket in the first week.",
+      "strengths": [
+        { "text": "The code is organized around the same words she uses in the resume.", "evidence": "TypeScript, TSX, and SQL are split across hub, ingest, and tests rather than one generated file." }
+      ],
+      "drawbacks": [
+        { "text": "I cannot tell from the repo alone how she reviews other people's code.", "evidence": "391 of 428 commits are hers, so most of the history is solo." }
+      ],
+      "redFlags": []
+    }
+  ],
+  "crossExam": [
+    {
+      "persona": "staff_engineer",
+      "targetPersona": "project_manager",
+      "type": "concede",
+      "text": "Agreed on the dates. I was looking for a gap between the README and the tests, and I did not find one."
+    },
+    {
+      "persona": "associate_engineer",
+      "targetPersona": "staff_engineer",
+      "type": "add",
+      "text": "The socket tests are readable. A new teammate could extend them without a guided tour."
+    }
+  ],
+  "completedAt": "2026-10-31T18:00:00.000Z"
+}

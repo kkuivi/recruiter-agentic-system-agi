@@ -1,0 +1,6 @@
+{
+  "id": "aaaaaaaa-aaaa-4aaa-8aaa-aaaaaaaaaaa1",
+  "name": "Maya Chen",
+  "githubUsername": "mayachen",
+  "resumeText": "Maya Chen\nSenior full-stack engineer\n\nPulseboard (Feb 2023 – Oct 2026)\nBuilt a real-time operations dashboard used by an on-call rotation. The browser subscribes over websockets, and a TypeScript ingest pipeline pulls events from the source systems, retries failed batches, and writes the rows the board reads. I owned the protocol, the pipeline, and the React UI. The repository includes end-to-end tests around the socket protocol and a build that runs in CI.\n\nBefore that I worked on internal admin tools. Pulseboard is the project I want judged."
+}

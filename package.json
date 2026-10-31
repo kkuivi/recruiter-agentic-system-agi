@@ -1,0 +1,11 @@
+{
+  "name": "proofhire",
+  "private": true,
+  "workspaces": ["apps/*", "packages/*"],
+  "scripts": {
+    "dev": "bash scripts/dev.sh",
+    "forensics": "bun packages/forensics/src/cli.ts",
+    "smoke": "bun scripts/actor-smoke.ts",
+    "check": "bun scripts/check-scores.ts"
+  }
+}

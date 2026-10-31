@@ -1,0 +1,11 @@
+node_modules
+dist
+.vite
+.env
+data
+**/.venv
+**/__pycache__
+*.pyc
+.DS_Store
+*.tsbuildinfo
+.agentworkforce

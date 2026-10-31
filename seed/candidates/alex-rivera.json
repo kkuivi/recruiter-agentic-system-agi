@@ -1,0 +1,6 @@
+{
+  "id": "cccccccc-cccc-4ccc-8ccc-ccccccccccc3",
+  "name": "Alex Rivera",
+  "githubUsername": "alexrivera",
+  "resumeText": "Alex Rivera\nSenior engineer, real-time data\n\nStreamline (Jan 2024 – Mar 2025)\nDesigned and built a distributed event streaming pipeline for operational metrics. Services consume Kafka topics, compute windowed aggregates with sub-second freshness, and serve a live board to operators. I owned ingestion, the aggregation jobs, and the delivery path. The system handled backfill, retries, and a schema registry. Stack was Kafka, TypeScript, ClickHouse, and Docker. This is the work I would walk into a design review."
+}

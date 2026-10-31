@@ -1,0 +1,6 @@
+{
+  "id": "bbbbbbbb-bbbb-4bbb-8bbb-bbbbbbbbbbb2",
+  "name": "Jordan Hale",
+  "githubUsername": "jordanhale",
+  "resumeText": "Jordan Hale\nFull-stack engineer\n\nHarbor (Jun 2025 – Sep 2026)\nBuilt a multi-tenant web app for small studios. Email and password auth with server sessions, a REST API for projects and membership, and a React client. I wrote the schema, the login flow, and most of the API. There is a smoke test around login, and the rest of the coverage is thin. The project is real and modest. It does not move streaming data."
+}

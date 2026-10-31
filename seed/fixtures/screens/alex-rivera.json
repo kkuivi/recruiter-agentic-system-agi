@@ -1,0 +1,62 @@
+{
+  "candidateId": "cccccccc-cccc-4ccc-8ccc-ccccccccccc3",
+  "relevance": 42,
+  "summary": "The resume describes a Kafka analytics platform. The repo is a two-commit scaffold, the build fails, and the streaming claims are not in the code.",
+  "projects": [
+    {
+      "name": "Streamline",
+      "description": "Distributed event streaming pipeline with Kafka and sub-second analytics for operational metrics.",
+      "claimedTech": ["Kafka", "TypeScript", "ClickHouse", "Docker"],
+      "claimedFeatures": [
+        "consumes Kafka topics",
+        "sub-second windowed analytics",
+        "Node service that exposes a health endpoint"
+      ],
+      "repoUrl": "https://github.com/alexrivera/streamline",
+      "claimedDates": "Jan 2024 – Mar 2025"
+    }
+  ],
+  "reports": [
+    {
+      "repoUrl": "https://github.com/alexrivera/streamline",
+      "exists": true,
+      "isFork": false,
+      "ownerMatchesCandidate": true,
+      "commitCount": 2,
+      "candidateCommitCount": 2,
+      "firstCommitAt": "2026-10-27T15:11:00.000Z",
+      "lastCommitAt": "2026-10-27T15:48:00.000Z",
+      "activeDays": 1,
+      "largestCommitShare": 0.92,
+      "linesOfCode": 640,
+      "languages": { "TypeScript": 640 },
+      "hasTests": false,
+      "install": { "attempted": true, "ok": true, "logTail": "added 142 packages in 4s" },
+      "build": {
+        "attempted": true,
+        "ok": false,
+        "logTail": "src/index.ts:1:24 - error TS2307: Cannot find module 'kafkajs'.\nFound 1 error."
+      },
+      "test": { "attempted": false, "ok": false, "logTail": "No test script in package.json." },
+      "claimChecks": [
+        {
+          "claim": "consumes Kafka topics",
+          "verdict": "unsupported",
+          "evidence": "No Kafka client, consumer loop, or topic configuration. The README names Kafka. The source does not import it."
+        },
+        {
+          "claim": "sub-second windowed analytics",
+          "verdict": "unsupported",
+          "evidence": "No windowed aggregation, ClickHouse client, or metrics computation in the 15 source files that were read."
+        },
+        {
+          "claim": "Node service that exposes a health endpoint",
+          "verdict": "supported",
+          "evidence": "src/server.ts returns 200 from GET /health and nothing else."
+        }
+      ],
+      "flags": [],
+      "authenticityScore": 0
+    }
+  ]
+}

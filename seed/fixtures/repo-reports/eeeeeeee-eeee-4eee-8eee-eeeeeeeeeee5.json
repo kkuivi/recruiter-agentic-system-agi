@@ -1,0 +1,125 @@
+[
+  {
+    "repoUrl": "https://github.com/ellisward/quantum-ledger",
+    "exists": false,
+    "isFork": false,
+    "ownerMatchesCandidate": false,
+    "commitCount": 0,
+    "candidateCommitCount": 0,
+    "firstCommitAt": null,
+    "lastCommitAt": null,
+    "activeDays": 0,
+    "largestCommitShare": 0,
+    "linesOfCode": 0,
+    "languages": {},
+    "hasTests": false,
+    "install": {
+      "attempted": false,
+      "ok": false,
+      "logTail": ""
+    },
+    "build": {
+      "attempted": false,
+      "ok": false,
+      "logTail": ""
+    },
+    "test": {
+      "attempted": false,
+      "ok": false,
+      "logTail": ""
+    },
+    "claimChecks": [
+      {
+        "claim": "distributed ledger for audit trails",
+        "verdict": "unsupported",
+        "evidence": "GitHub returned 404 for this repository."
+      }
+    ],
+    "flags": [
+      "repo_missing"
+    ],
+    "authenticityScore": 0
+  },
+  {
+    "repoUrl": "https://github.com/ellisward/neural-ops",
+    "exists": false,
+    "isFork": false,
+    "ownerMatchesCandidate": false,
+    "commitCount": 0,
+    "candidateCommitCount": 0,
+    "firstCommitAt": null,
+    "lastCommitAt": null,
+    "activeDays": 0,
+    "largestCommitShare": 0,
+    "linesOfCode": 0,
+    "languages": {},
+    "hasTests": false,
+    "install": {
+      "attempted": false,
+      "ok": false,
+      "logTail": ""
+    },
+    "build": {
+      "attempted": false,
+      "ok": false,
+      "logTail": ""
+    },
+    "test": {
+      "attempted": false,
+      "ok": false,
+      "logTail": ""
+    },
+    "claimChecks": [
+      {
+        "claim": "LLM control plane",
+        "verdict": "unsupported",
+        "evidence": "GitHub returned 404 for this repository."
+      }
+    ],
+    "flags": [
+      "repo_missing"
+    ],
+    "authenticityScore": 0
+  },
+  {
+    "repoUrl": "https://github.com/ellisward/edge-mesh",
+    "exists": false,
+    "isFork": false,
+    "ownerMatchesCandidate": false,
+    "commitCount": 0,
+    "candidateCommitCount": 0,
+    "firstCommitAt": null,
+    "lastCommitAt": null,
+    "activeDays": 0,
+    "largestCommitShare": 0,
+    "linesOfCode": 0,
+    "languages": {},
+    "hasTests": false,
+    "install": {
+      "attempted": false,
+      "ok": false,
+      "logTail": ""
+    },
+    "build": {
+      "attempted": false,
+      "ok": false,
+      "logTail": ""
+    },
+    "test": {
+      "attempted": false,
+      "ok": false,
+      "logTail": ""
+    },
+    "claimChecks": [
+      {
+        "claim": "global edge compute fabric",
+        "verdict": "unsupported",
+        "evidence": "GitHub returned 404 for this repository."
+      }
+    ],
+    "flags": [
+      "repo_missing"
+    ],
+    "authenticityScore": 0
+  }
+]

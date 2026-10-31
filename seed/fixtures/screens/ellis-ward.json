@@ -1,0 +1,114 @@
+{
+  "candidateId": "eeeeeeee-eeee-4eee-8eee-eeeeeeeeeee5",
+  "relevance": 6,
+  "summary": "Three headline projects point at repositories that do not exist.",
+  "projects": [
+    {
+      "name": "Quantum Ledger",
+      "description": "A distributed ledger for audit trails.",
+      "claimedTech": ["Go", "gRPC"],
+      "claimedFeatures": ["distributed ledger for audit trails"],
+      "repoUrl": "https://github.com/ellisward/quantum-ledger",
+      "claimedDates": "2022 – 2024"
+    },
+    {
+      "name": "Neural Ops",
+      "description": "An internal LLM control plane.",
+      "claimedTech": ["Python", "Kubernetes"],
+      "claimedFeatures": ["LLM control plane"],
+      "repoUrl": "https://github.com/ellisward/neural-ops",
+      "claimedDates": "2024 – 2025"
+    },
+    {
+      "name": "Edge Mesh",
+      "description": "A global edge compute fabric.",
+      "claimedTech": ["Rust"],
+      "claimedFeatures": ["global edge compute fabric"],
+      "repoUrl": "https://github.com/ellisward/edge-mesh",
+      "claimedDates": "2025 – 2026"
+    }
+  ],
+  "reports": [
+    {
+      "repoUrl": "https://github.com/ellisward/quantum-ledger",
+      "exists": false,
+      "isFork": false,
+      "ownerMatchesCandidate": false,
+      "commitCount": 0,
+      "candidateCommitCount": 0,
+      "firstCommitAt": null,
+      "lastCommitAt": null,
+      "activeDays": 0,
+      "largestCommitShare": 0,
+      "linesOfCode": 0,
+      "languages": {},
+      "hasTests": false,
+      "install": { "attempted": false, "ok": false, "logTail": "" },
+      "build": { "attempted": false, "ok": false, "logTail": "" },
+      "test": { "attempted": false, "ok": false, "logTail": "" },
+      "claimChecks": [
+        {
+          "claim": "distributed ledger for audit trails",
+          "verdict": "unsupported",
+          "evidence": "GitHub returned 404 for this repository."
+        }
+      ],
+      "flags": ["repo_missing"],
+      "authenticityScore": 0
+    },
+    {
+      "repoUrl": "https://github.com/ellisward/neural-ops",
+      "exists": false,
+      "isFork": false,
+      "ownerMatchesCandidate": false,
+      "commitCount": 0,
+      "candidateCommitCount": 0,
+      "firstCommitAt": null,
+      "lastCommitAt": null,
+      "activeDays": 0,
+      "largestCommitShare": 0,
+      "linesOfCode": 0,
+      "languages": {},
+      "hasTests": false,
+      "install": { "attempted": false, "ok": false, "logTail": "" },
+      "build": { "attempted": false, "ok": false, "logTail": "" },
+      "test": { "attempted": false, "ok": false, "logTail": "" },
+      "claimChecks": [
+        {
+          "claim": "LLM control plane",
+          "verdict": "unsupported",
+          "evidence": "GitHub returned 404 for this repository."
+        }
+      ],
+      "flags": ["repo_missing"],
+      "authenticityScore": 0
+    },
+    {
+      "repoUrl": "https://github.com/ellisward/edge-mesh",
+      "exists": false,
+      "isFork": false,
+      "ownerMatchesCandidate": false,
+      "commitCount": 0,
+      "candidateCommitCount": 0,
+      "firstCommitAt": null,
+      "lastCommitAt": null,
+      "activeDays": 0,
+      "largestCommitShare": 0,
+      "linesOfCode": 0,
+      "languages": {},
+      "hasTests": false,
+      "install": { "attempted": false, "ok": false, "logTail": "" },
+      "build": { "attempted": false, "ok": false, "logTail": "" },
+      "test": { "attempted": false, "ok": false, "logTail": "" },
+      "claimChecks": [
+        {
+          "claim": "global edge compute fabric",
+          "verdict": "unsupported",
+          "evidence": "GitHub returned 404 for this repository."
+        }
+      ],
+      "flags": ["repo_missing"],
+      "authenticityScore": 0
+    }
+  ]
+}

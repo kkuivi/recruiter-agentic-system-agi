@@ -1,0 +1,6 @@
+{
+  "id": "dddddddd-dddd-4ddd-8ddd-ddddddddddd4",
+  "name": "Samir Okonkwo",
+  "githubUsername": "samirokonkwo",
+  "resumeText": "Samir Okonkwo\nMachine learning engineer\n\nNorthstar (2023 – 2025)\nBuilt a recommendation engine. I trained a ranking model on behavioral events, owned the feature pipeline, and served it behind an online inference API. The repository is public and I can walk through the training job."
+}

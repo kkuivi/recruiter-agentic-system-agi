@@ -1,0 +1,54 @@
+[
+  {
+    "repoUrl": "https://github.com/jordanhale/harbor",
+    "exists": true,
+    "isFork": false,
+    "ownerMatchesCandidate": true,
+    "commitCount": 48,
+    "candidateCommitCount": 44,
+    "firstCommitAt": "2025-06-02T14:22:00.000Z",
+    "lastCommitAt": "2026-09-12T18:03:00.000Z",
+    "activeDays": 22,
+    "largestCommitShare": 0.34,
+    "linesOfCode": 6120,
+    "languages": {
+      "TypeScript": 4700,
+      "TSX": 1420
+    },
+    "hasTests": false,
+    "install": {
+      "attempted": true,
+      "ok": true,
+      "logTail": "added 388 packages in 9s"
+    },
+    "build": {
+      "attempted": true,
+      "ok": true,
+      "logTail": "tsc --noEmit passed"
+    },
+    "test": {
+      "attempted": false,
+      "ok": false,
+      "logTail": ""
+    },
+    "claimChecks": [
+      {
+        "claim": "email and password auth with sessions",
+        "verdict": "supported",
+        "evidence": "src/auth/session.ts issues an httpOnly session cookie after password check."
+      },
+      {
+        "claim": "REST API for projects",
+        "verdict": "supported",
+        "evidence": "src/routes/projects.ts implements list, create, and update."
+      },
+      {
+        "claim": "integration tests around login",
+        "verdict": "partial",
+        "evidence": "tests/login.smoke.ts hits the login route once. There is no session or multi-tenant coverage."
+      }
+    ],
+    "flags": [],
+    "authenticityScore": 96
+  }
+]

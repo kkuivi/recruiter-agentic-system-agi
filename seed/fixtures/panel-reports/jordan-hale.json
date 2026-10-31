@@ -1,0 +1,76 @@
+{
+  "candidateId": "bbbbbbbb-bbbb-4bbb-8bbb-bbbbbbbbbbb2",
+  "panelScore": 68,
+  "recommendation": "maybe",
+  "summary": "Jordan Hale built a real application. Harbor has auth, a REST API, and a history that belongs to him. It is not evidence of the realtime data work this role is hiring for, and the tests are thin.",
+  "consensus": [
+    "The repository is his, the build passes, and the auth and project API claims are in the source.",
+    "Nothing in the repo speaks to streaming, websockets, or an ingest pipeline."
+  ],
+  "disagreements": [
+    "The associate would interview him for a product-engineering seat. The staff engineer would not stretch this repo into proof he can own the data platform."
+  ],
+  "questionsForHR": [
+    "Ask him to point to the hardest bug in Harbor and the commit that fixed it.",
+    "Ask what he would add first if Harbor had to push live updates.",
+    "Ask why the login coverage stopped at one smoke test.",
+    "Ask which parts of the resume he would not claim in front of this codebase.",
+    "If he advances, pair him on a small streaming task before an offer."
+  ],
+  "reviews": [
+    {
+      "persona": "project_manager",
+      "verdict": "maybe",
+      "score": 70,
+      "headline": "He shipped a modest product on a believable timeline, and it is a different product from the one we are hiring for.",
+      "strengths": [
+        { "text": "The dates and the commit history describe the same stretch of work.", "evidence": "Resume: Harbor (Jun 2025 – Sep 2026). Commits run from 2025-06-02 to 2026-09-12 across 22 active days." }
+      ],
+      "drawbacks": [
+        { "text": "Scope is a multi-tenant CRUD app, not a realtime surface.", "evidence": "Supported claims are session auth and a project API. The job description is a streaming dashboard." }
+      ],
+      "redFlags": []
+    },
+    {
+      "persona": "staff_engineer",
+      "verdict": "maybe",
+      "score": 64,
+      "headline": "The code is real and the build passes. The test story does not match a senior hire on this team.",
+      "strengths": [
+        { "text": "Session auth and the project routes are implemented, not described.", "evidence": "src/auth/session.ts and src/routes/projects.ts. tsc --noEmit passed." }
+      ],
+      "drawbacks": [
+        { "text": "Login coverage is a single smoke test.", "evidence": "Claim check: tests/login.smoke.ts hits the login route once. hasTests is false for anything broader." }
+      ],
+      "redFlags": []
+    },
+    {
+      "persona": "associate_engineer",
+      "verdict": "maybe",
+      "score": 71,
+      "headline": "I could work with this code. I would not yet put him on the pipeline alone.",
+      "strengths": [
+        { "text": "The modules are small and named after the behavior.", "evidence": "Auth and project routes are separate files in a 6,120 line TypeScript app." }
+      ],
+      "drawbacks": [
+        { "text": "There is no sign he has debugged a streaming system.", "evidence": "No websocket, queue, or ingest code in the claim checks." }
+      ],
+      "redFlags": []
+    }
+  ],
+  "crossExam": [
+    {
+      "persona": "staff_engineer",
+      "targetPersona": "associate_engineer",
+      "type": "challenge",
+      "text": "Readable CRUD is not the same as being ready for the pipeline. The missing tests are the point, not a footnote."
+    },
+    {
+      "persona": "associate_engineer",
+      "targetPersona": "staff_engineer",
+      "type": "concede",
+      "text": "That's fair. I would interview him. I would not staff him on ingest in month one."
+    }
+  ],
+  "completedAt": "2026-10-31T18:05:00.000Z"
+}

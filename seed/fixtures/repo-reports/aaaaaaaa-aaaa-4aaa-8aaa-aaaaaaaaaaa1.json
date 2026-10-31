@@ -1,0 +1,55 @@
+[
+  {
+    "repoUrl": "https://github.com/mayachen/pulseboard",
+    "exists": true,
+    "isFork": false,
+    "ownerMatchesCandidate": true,
+    "commitCount": 428,
+    "candidateCommitCount": 391,
+    "firstCommitAt": "2023-02-11T16:04:00.000Z",
+    "lastCommitAt": "2026-10-18T21:12:00.000Z",
+    "activeDays": 146,
+    "largestCommitShare": 0.11,
+    "linesOfCode": 18420,
+    "languages": {
+      "TypeScript": 12100,
+      "TSX": 5400,
+      "SQL": 920
+    },
+    "hasTests": true,
+    "install": {
+      "attempted": true,
+      "ok": true,
+      "logTail": "added 612 packages in 18s"
+    },
+    "build": {
+      "attempted": true,
+      "ok": true,
+      "logTail": "tsc --noEmit && vite build\nbuilt in 11.4s"
+    },
+    "test": {
+      "attempted": true,
+      "ok": true,
+      "logTail": "vitest run\n42 passed"
+    },
+    "claimChecks": [
+      {
+        "claim": "websocket fanout to the dashboard",
+        "verdict": "supported",
+        "evidence": "src/server/hub.ts broadcasts socket events to subscribed boards."
+      },
+      {
+        "claim": "ingest pipeline with retries",
+        "verdict": "supported",
+        "evidence": "src/pipeline/ingest.ts retries failed batches with backoff."
+      },
+      {
+        "claim": "end-to-end tests around the socket protocol",
+        "verdict": "supported",
+        "evidence": "tests/socket.e2e.ts covers subscribe, replay, and disconnect."
+      }
+    ],
+    "flags": [],
+    "authenticityScore": 100
+  }
+]

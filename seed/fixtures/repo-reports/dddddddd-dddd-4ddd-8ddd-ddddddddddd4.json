@@ -1,0 +1,59 @@
+[
+  {
+    "repoUrl": "https://github.com/public-ml/recommend-starter",
+    "exists": true,
+    "isFork": true,
+    "ownerMatchesCandidate": false,
+    "commitCount": 240,
+    "candidateCommitCount": 0,
+    "firstCommitAt": "2021-04-03T11:00:00.000Z",
+    "lastCommitAt": "2024-11-02T09:40:00.000Z",
+    "activeDays": 80,
+    "largestCommitShare": 0.18,
+    "linesOfCode": 12400,
+    "languages": {
+      "Python": 12400
+    },
+    "hasTests": true,
+    "install": {
+      "attempted": false,
+      "ok": false,
+      "logTail": ""
+    },
+    "build": {
+      "attempted": false,
+      "ok": false,
+      "logTail": ""
+    },
+    "test": {
+      "attempted": false,
+      "ok": false,
+      "logTail": ""
+    },
+    "claimChecks": [
+      {
+        "claim": "trained a ranking model",
+        "verdict": "unsupported",
+        "evidence": "Training code exists upstream. Zero commits are authored by samirokonkwo."
+      },
+      {
+        "claim": "feature pipeline owned by the candidate",
+        "verdict": "unsupported",
+        "evidence": "Commit authors are the upstream maintainers. The candidate has no commits."
+      },
+      {
+        "claim": "online inference API",
+        "verdict": "unsupported",
+        "evidence": "The FastAPI app is part of the fork and was not modified by the candidate."
+      }
+    ],
+    "flags": [
+      "fork_no_work",
+      "not_owner",
+      "claim_unsupported",
+      "claim_unsupported",
+      "claim_unsupported"
+    ],
+    "authenticityScore": 0
+  }
+]

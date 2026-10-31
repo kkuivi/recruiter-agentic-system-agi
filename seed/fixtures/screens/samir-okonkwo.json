@@ -1,0 +1,58 @@
+{
+  "candidateId": "dddddddd-dddd-4ddd-8ddd-ddddddddddd4",
+  "relevance": 14,
+  "summary": "Recommendation-engine claims sit on a public fork the candidate has never committed to.",
+  "projects": [
+    {
+      "name": "Northstar",
+      "description": "Machine learning recommendation engine trained on behavioral events and served behind an API.",
+      "claimedTech": ["Python", "PyTorch", "FastAPI"],
+      "claimedFeatures": [
+        "trained a ranking model",
+        "feature pipeline owned by the candidate",
+        "online inference API"
+      ],
+      "repoUrl": "https://github.com/public-ml/recommend-starter",
+      "claimedDates": "2023 – 2025"
+    }
+  ],
+  "reports": [
+    {
+      "repoUrl": "https://github.com/public-ml/recommend-starter",
+      "exists": true,
+      "isFork": true,
+      "ownerMatchesCandidate": false,
+      "commitCount": 240,
+      "candidateCommitCount": 0,
+      "firstCommitAt": "2021-04-03T11:00:00.000Z",
+      "lastCommitAt": "2024-11-02T09:40:00.000Z",
+      "activeDays": 80,
+      "largestCommitShare": 0.18,
+      "linesOfCode": 12400,
+      "languages": { "Python": 12400 },
+      "hasTests": true,
+      "install": { "attempted": false, "ok": false, "logTail": "" },
+      "build": { "attempted": false, "ok": false, "logTail": "" },
+      "test": { "attempted": false, "ok": false, "logTail": "" },
+      "claimChecks": [
+        {
+          "claim": "trained a ranking model",
+          "verdict": "unsupported",
+          "evidence": "Training code exists upstream. Zero commits are authored by samirokonkwo."
+        },
+        {
+          "claim": "feature pipeline owned by the candidate",
+          "verdict": "unsupported",
+          "evidence": "Commit authors are the upstream maintainers. The candidate has no commits."
+        },
+        {
+          "claim": "online inference API",
+          "verdict": "unsupported",
+          "evidence": "The FastAPI app is part of the fork and was not modified by the candidate."
+        }
+      ],
+      "flags": [],
+      "authenticityScore": 0
+    }
+  ]
+}

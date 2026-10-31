@@ -1,0 +1,333 @@
+{
+  "candidateId": "cccccccc-cccc-4ccc-8ccc-ccccccccccc3",
+  "events": [
+    {
+      "seq": 1,
+      "at": "2026-10-31T19:00:00.000Z",
+      "kind": "phase",
+      "payload": { "phase": "independent" },
+      "delayMs": 400
+    },
+    {
+      "seq": 2,
+      "at": "2026-10-31T19:00:02.000Z",
+      "kind": "message",
+      "persona": "project_manager",
+      "payload": { "text": "The resume says Streamline ran from January 2024 through March 2025. The repository has two commits, both on 27 October 2026, and the first one is 92% of the code." },
+      "delayMs": 1800
+    },
+    {
+      "seq": 3,
+      "at": "2026-10-31T19:00:03.000Z",
+      "kind": "review",
+      "persona": "project_manager",
+      "delayMs": 700,
+      "payload": {
+        "persona": "project_manager",
+        "verdict": "reject",
+        "score": 18,
+        "headline": "The timeline on the resume and the timeline in git are not the same project.",
+        "strengths": [
+          { "text": "He does own the repository the resume names.", "evidence": "ownerMatchesCandidate is true. Both commits are authored by alexrivera." }
+        ],
+        "drawbacks": [
+          { "text": "Two commits on a single afternoon cannot support a year of claimed delivery.", "evidence": "claimedDates Jan 2024 – Mar 2025. firstCommitAt and lastCommitAt are both 2026-10-27. activeDays is 1." }
+        ],
+        "redFlags": [
+          { "text": "92% of the lines landed in one dump.", "evidence": "largestCommitShare is 0.92. Flag single_dump." }
+        ]
+      }
+    },
+    {
+      "seq": 4,
+      "at": "2026-10-31T19:00:05.000Z",
+      "kind": "message",
+      "persona": "staff_engineer",
+      "payload": { "text": "The build fails looking for kafkajs. I read the source for a consumer, a window, a ClickHouse client. They are not there. The README is doing the talking." },
+      "delayMs": 1700
+    },
+    {
+      "seq": 5,
+      "at": "2026-10-31T19:00:06.000Z",
+      "kind": "review",
+      "persona": "staff_engineer",
+      "delayMs": 650,
+      "payload": {
+        "persona": "staff_engineer",
+        "verdict": "reject",
+        "score": 14,
+        "headline": "The streaming architecture is unsupported, and the project does not build.",
+        "strengths": [
+          { "text": "There is a real, small Node process.", "evidence": "src/server.ts returns 200 from GET /health. That claim is supported." }
+        ],
+        "drawbacks": [
+          { "text": "640 lines and no tests is a scaffold, not a pipeline.", "evidence": "linesOfCode 640. hasTests is false. No test script in package.json." }
+        ],
+        "redFlags": [
+          { "text": "Kafka and the windowed analytics are not in the source.", "evidence": "Claim checks unsupported. Build log: Cannot find module 'kafkajs'." }
+        ]
+      }
+    },
+    {
+      "seq": 6,
+      "at": "2026-10-31T19:00:08.000Z",
+      "kind": "message",
+      "persona": "associate_engineer",
+      "payload": { "text": "I can read the health server. I would not pretend it is a distributed pipeline. There is enough here to ask whether he can learn the rest, and not enough to skip that question." },
+      "delayMs": 1600
+    },
+    {
+      "seq": 7,
+      "at": "2026-10-31T19:00:09.000Z",
+      "kind": "review",
+      "persona": "associate_engineer",
+      "delayMs": 600,
+      "payload": {
+        "persona": "associate_engineer",
+        "verdict": "maybe",
+        "score": 46,
+        "headline": "The code that exists is small and readable. It is not the system he described.",
+        "strengths": [
+          { "text": "The one supported claim is actually in the file he would be asked to open.", "evidence": "src/server.ts, GET /health." }
+        ],
+        "drawbacks": [
+          { "text": "A new teammate would learn a tutorial layout, not an operating pipeline.", "evidence": "Two commits, 640 lines, one active day." }
+        ],
+        "redFlags": [
+          { "text": "I would not let this resume reach a hiring manager without the claim list annotated.", "evidence": "Resume: consumes Kafka topics and computes windowed aggregates. Both claims are unsupported." }
+        ]
+      }
+    },
+    {
+      "seq": 8,
+      "at": "2026-10-31T19:00:10.000Z",
+      "kind": "phase",
+      "payload": { "phase": "crossexam" },
+      "delayMs": 500
+    },
+    {
+      "seq": 9,
+      "at": "2026-10-31T19:00:12.000Z",
+      "kind": "message",
+      "persona": "project_manager",
+      "payload": { "text": "Staff engineer, I agree with you. Associate, a readable health check is not a reason to keep a year-long streaming claim on the resume." },
+      "delayMs": 1500
+    },
+    {
+      "seq": 10,
+      "at": "2026-10-31T19:00:13.000Z",
+      "kind": "crossexam",
+      "persona": "project_manager",
+      "delayMs": 450,
+      "payload": {
+        "persona": "project_manager",
+        "notes": [
+          {
+            "persona": "project_manager",
+            "targetPersona": "staff_engineer",
+            "type": "concede",
+            "text": "The missing Kafka client and the failed build are enough. I don't have a separate defense of the architecture."
+          },
+          {
+            "persona": "project_manager",
+            "targetPersona": "associate_engineer",
+            "type": "challenge",
+            "text": "Calling this a maybe still leaves the date gap in the room. Jan 2024 to Mar 2025 is not 27 October 2026."
+          }
+        ]
+      }
+    },
+    {
+      "seq": 11,
+      "at": "2026-10-31T19:00:15.000Z",
+      "kind": "message",
+      "persona": "staff_engineer",
+      "payload": { "text": "Associate, I am challenging the maybe. Unsupported architecture claims are red flags. They are not a growth area we discover after hiring." },
+      "delayMs": 1500
+    },
+    {
+      "seq": 12,
+      "at": "2026-10-31T19:00:16.000Z",
+      "kind": "crossexam",
+      "persona": "staff_engineer",
+      "delayMs": 400,
+      "payload": {
+        "persona": "staff_engineer",
+        "notes": [
+          {
+            "persona": "staff_engineer",
+            "targetPersona": "associate_engineer",
+            "type": "challenge",
+            "text": "A file that returns 200 is not evidence he can take a pipeline ticket. The build does not even resolve kafkajs."
+          },
+          {
+            "persona": "staff_engineer",
+            "targetPersona": "project_manager",
+            "type": "add",
+            "text": "The single dump matters technically too. There is no reviewable history of how the design changed."
+          }
+        ]
+      }
+    },
+    {
+      "seq": 13,
+      "at": "2026-10-31T19:00:18.000Z",
+      "kind": "message",
+      "persona": "associate_engineer",
+      "payload": { "text": "I'll concede the staffing call. I would not put him on the pipeline. I only meant the code that exists is not nonsense, and the resume should have said that and stopped." },
+      "delayMs": 1400
+    },
+    {
+      "seq": 14,
+      "at": "2026-10-31T19:00:19.000Z",
+      "kind": "crossexam",
+      "persona": "associate_engineer",
+      "delayMs": 400,
+      "payload": {
+        "persona": "associate_engineer",
+        "notes": [
+          {
+            "persona": "associate_engineer",
+            "targetPersona": "staff_engineer",
+            "type": "concede",
+            "text": "Agreed. I would not staff him on ingest. The unsupported claims are the decision, not the health route."
+          },
+          {
+            "persona": "associate_engineer",
+            "targetPersona": "project_manager",
+            "type": "concede",
+            "text": "The dates are worse than I weighted them. A two-commit afternoon cannot wear a 2024 start date."
+          }
+        ]
+      }
+    },
+    {
+      "seq": 15,
+      "at": "2026-10-31T19:00:20.000Z",
+      "kind": "phase",
+      "payload": { "phase": "synthesis" },
+      "delayMs": 500
+    },
+    {
+      "seq": 16,
+      "at": "2026-10-31T19:00:22.000Z",
+      "kind": "message",
+      "persona": "moderator",
+      "payload": { "text": "The panel rejects. The resume and the repository describe different projects. Two reviewers reject outright. The associate's maybe collapsed once the date gap and the missing Kafka client were on the table." },
+      "delayMs": 1700
+    },
+    {
+      "seq": 17,
+      "at": "2026-10-31T19:00:24.000Z",
+      "kind": "report",
+      "persona": "moderator",
+      "delayMs": 700,
+      "payload": {
+        "candidateId": "cccccccc-cccc-4ccc-8ccc-ccccccccccc3",
+        "panelScore": 22,
+        "recommendation": "reject",
+        "summary": "Alex Rivera's resume describes a Kafka analytics platform he ran for over a year. The repository is a two-commit scaffold from a single afternoon, the build cannot find kafkajs, and the streaming claims are not in the source.",
+        "consensus": [
+          "The repository does not contain a streaming pipeline.",
+          "The resume dates and the commit dates do not describe the same work."
+        ],
+        "disagreements": [
+          "The associate initially scored a maybe on the grounds that the health server is real. After cross-exam they agreed it should not carry the candidate forward."
+        ],
+        "questionsForHR": [
+          "Ask him to open the Kafka consumer in the repo. There isn't one.",
+          "Ask what the second commit changed, and why 92% of the lines arrived in the first.",
+          "Ask him to build the project from a clean checkout and explain the kafkajs error.",
+          "Ask which resume bullets he would withdraw after reading the code with you.",
+          "If anyone still wants a conversation, make it a working session on a small streaming task, with the README closed."
+        ],
+        "reviews": [
+          {
+            "persona": "project_manager",
+            "verdict": "reject",
+            "score": 18,
+            "headline": "The timeline on the resume and the timeline in git are not the same project.",
+            "strengths": [
+              { "text": "He does own the repository the resume names.", "evidence": "ownerMatchesCandidate is true. Both commits are authored by alexrivera." }
+            ],
+            "drawbacks": [
+              { "text": "Two commits on a single afternoon cannot support a year of claimed delivery.", "evidence": "claimedDates Jan 2024 – Mar 2025. firstCommitAt and lastCommitAt are both 2026-10-27. activeDays is 1." }
+            ],
+            "redFlags": [
+              { "text": "92% of the lines landed in one dump.", "evidence": "largestCommitShare is 0.92. Flag single_dump." }
+            ]
+          },
+          {
+            "persona": "staff_engineer",
+            "verdict": "reject",
+            "score": 14,
+            "headline": "The streaming architecture is unsupported, and the project does not build.",
+            "strengths": [
+              { "text": "There is a real, small Node process.", "evidence": "src/server.ts returns 200 from GET /health. That claim is supported." }
+            ],
+            "drawbacks": [
+              { "text": "640 lines and no tests is a scaffold, not a pipeline.", "evidence": "linesOfCode 640. hasTests is false. No test script in package.json." }
+            ],
+            "redFlags": [
+              { "text": "Kafka and the windowed analytics are not in the source.", "evidence": "Claim checks unsupported. Build log: Cannot find module 'kafkajs'." }
+            ]
+          },
+          {
+            "persona": "associate_engineer",
+            "verdict": "maybe",
+            "score": 46,
+            "headline": "The code that exists is small and readable. It is not the system he described.",
+            "strengths": [
+              { "text": "The one supported claim is actually in the file he would be asked to open.", "evidence": "src/server.ts, GET /health." }
+            ],
+            "drawbacks": [
+              { "text": "A new teammate would learn a tutorial layout, not an operating pipeline.", "evidence": "Two commits, 640 lines, one active day." }
+            ],
+            "redFlags": [
+              { "text": "I would not let this resume reach a hiring manager without the claim list annotated.", "evidence": "Resume: consumes Kafka topics and computes windowed aggregates. Both claims are unsupported." }
+            ]
+          }
+        ],
+        "crossExam": [
+          {
+            "persona": "project_manager",
+            "targetPersona": "staff_engineer",
+            "type": "concede",
+            "text": "The missing Kafka client and the failed build are enough. I don't have a separate defense of the architecture."
+          },
+          {
+            "persona": "project_manager",
+            "targetPersona": "associate_engineer",
+            "type": "challenge",
+            "text": "Calling this a maybe still leaves the date gap in the room. Jan 2024 to Mar 2025 is not 27 October 2026."
+          },
+          {
+            "persona": "staff_engineer",
+            "targetPersona": "associate_engineer",
+            "type": "challenge",
+            "text": "A file that returns 200 is not evidence he can take a pipeline ticket. The build does not even resolve kafkajs."
+          },
+          {
+            "persona": "staff_engineer",
+            "targetPersona": "project_manager",
+            "type": "add",
+            "text": "The single dump matters technically too. There is no reviewable history of how the design changed."
+          },
+          {
+            "persona": "associate_engineer",
+            "targetPersona": "staff_engineer",
+            "type": "concede",
+            "text": "Agreed. I would not staff him on ingest. The unsupported claims are the decision, not the health route."
+          },
+          {
+            "persona": "associate_engineer",
+            "targetPersona": "project_manager",
+            "type": "concede",
+            "text": "The dates are worse than I weighted them. A two-commit afternoon cannot wear a 2024 start date."
+          }
+        ],
+        "completedAt": "2026-10-31T19:00:24.000Z"
+      }
+    }
+  ]
+}
